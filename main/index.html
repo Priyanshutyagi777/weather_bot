@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Admin Panel</h2>
+        <div class="form-group">
+            <label for="password">Admin Password</label>
+            <input type="password" id="password" placeholder="Enter password">
+            <br/><br/>
+            
+            <button onclick="login()">Login</button>
+        </div>
+
+        <div id="admin-controls" style="display: none;">
+            <h3>Settings</h3>
+            <div class="form-group">
+                <label for="api-key">Update Weather API Key</label>
+                <input type="text" id="api-key" placeholder="Enter new API key">
+                <button onclick="updateApiKey()">Update API Key</button>
+            </div>
+
+            <h3>User Management</h3>
+            <div class="form-group">
+                <label for="block-user-id">Block User by Chat ID</label>
+                <input type="text" id="block-user-id" placeholder="Enter user Chat ID">
+                <button onclick="blockUser()">Block User</button>
+            </div>
+            <div class="form-group">
+                <label for="delete-user-id">Delete User by Chat ID</label>
+                <input type="text" id="delete-user-id" placeholder="Enter user Chat ID">
+                <button onclick="deleteUser()">Delete User</button>
+            </div>
+        </div>
+        <div id="message" class="error" style="display: none;"></div>
+    </div>
+
+   <script src="main.js"></script>     <!--  Link to external JavaScript file  -->
+</body>
+</html>
