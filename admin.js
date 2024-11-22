@@ -6,7 +6,8 @@ import cors from 'cors';
 dotenv.config();
 
 const app = express();
-const port = 3000;
+ const port = process.env.PORT || 3000; 
+
 
 // Update CORS middleware to allow both localhost and 127.0.0.1
 app.use(cors({
