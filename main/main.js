@@ -1,4 +1,6 @@
-const API_BASE_URL = 'http://localhost:3000/admin'; //local host
+// const API_BASE_URL = 'http://localhost:3000/admin'; //local host
+const API_BASE_URL = 'https://weather-bot.onrender.com/admin'; //local host
+
 
 
 
@@ -21,9 +23,6 @@ async function login() {
         showMessage('Error during login.', 'error');
     }
 }
-
-
-
 
 async function updateApiKey() {
     const newApiKey = document.getElementById('api-key').value;
