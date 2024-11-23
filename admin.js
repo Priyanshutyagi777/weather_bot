@@ -40,13 +40,13 @@ app.get('/', (req, res) => {
     res.send('Welcome to the Weather Bot Admin Panel!');
 });
 
-// Adding route to handle GET requests to /admin
-app.get('/admin', (req, res) => {
-    res.send('Welcome to the Admin Panel');
-});
+ // Adding route to handle GET requests to /admin
+// app.get('/admin', (req, res) => {
+//     res.send('Welcome to the Admin Panel');
+// });
 
 // Admin login route
-app.post('/admin/login', (req, res) => {
+app.post('/login', (req, res) => {
     const { password } = req.body;
     if (password === adminPassword) {
         res.send('Admin login successful');
@@ -56,12 +56,12 @@ app.post('/admin/login', (req, res) => {
 });
 
 // View settings
-app.get('/admin/settings', (req, res) => {
+app.get('/settings', (req, res) => {
     res.json(settings);
 });
 
 // Update weather API key
-app.post('/admin/update-weather-api', (req, res) => {
+app.post('/update-weather-api', (req, res) => {
     const { newApiKey } = req.body;
     if (newApiKey) {
         settings.weatherApiKey = newApiKey;
@@ -72,7 +72,7 @@ app.post('/admin/update-weather-api', (req, res) => {
 });
 
 // Block a user
-app.post('/admin/block-user', (req, res) => {
+app.post('/block-user', (req, res) => {
     const { chatId } = req.body;
     if (users[chatId]) {
         users[chatId].blocked = true;
@@ -83,7 +83,7 @@ app.post('/admin/block-user', (req, res) => {
 });
 
 // Delete a user
-app.post('/admin/delete-user', (req, res) => {
+app.post('/delete-user', (req, res) => {
     const { chatId } = req.body;
     if (users[chatId]) {
         delete users[chatId];
