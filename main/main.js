@@ -1,7 +1,5 @@
 // const API_BASE_URL = 'http://localhost:3000/admin'; //local host
-const API_BASE_URL = 'https://weather-bot.onrender.com/admin'; //local host
-
-
+const API_BASE_URL = 'https://weather-bot-ucep.onrender.com'; //local host
 
 
 async function login() {
