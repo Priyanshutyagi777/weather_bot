@@ -1,6 +1,7 @@
 import TelegramBot from 'node-telegram-bot-api';
 import fetch from 'node-fetch';
 import dotenv from 'dotenv';
+import express from 'express'; //using it to deploy bot on render bcz of the port
 
 dotenv.config();
 
@@ -10,6 +11,13 @@ const bot = new TelegramBot(token, { polling: true });
 
 let users = {}; // Store user subscriptions and cities
 
+// Minimal Express server for Render deployment
+const app = express();
+const PORT = process.env.PORT || 3000; // Render dynamically assigns PORT
+app.get('/', (req, res) => res.send('Bot is running'));
+app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
+ 
+//login incoming message
 bot.on('message', (msg) => {
     const chatId = msg.chat.id; // Extract chatId from the coonsolelog
     console.log(`Chat ID: ${chatId}`);
